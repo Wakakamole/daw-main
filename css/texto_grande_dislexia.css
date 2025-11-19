@@ -1,0 +1,22 @@
+/*
+	Hoja de estilo alternativa: Texto grande + fuente de letra para dislexia
+*/
+
+/* primero "Texto grande" y luego aplicar la tipografía */
+@import url('texto_grande.css');
+
+/* Tipografía */
+@font-face {
+	font-family: 'OpenDyslexic';
+	src: url('fonts/OpenDyslexic-Regular.woff2') format('woff2'),
+			 url('fonts/OpenDyslexic-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Aplicar la tipografía a todo el body */
+body {
+	font-family: 'OpenDyslexic', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	line-height: 1.8;
+}

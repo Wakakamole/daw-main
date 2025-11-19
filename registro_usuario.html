@@ -1,0 +1,159 @@
+<!-- PÁGINA DE REGISTRO DE USUARIO -->
+<!--
+    Pagina que permite a un nuevo usuario registrarse.
+    El formulario de registro incluye los siguientes campos:
+    - Nombre de usuario
+    - Contraseña
+    - Confirmar contraseña
+    - Dirección de correo electrónico
+    - Sexo (opciones: Hombre, Mujer, Otro)
+    - Fecha de nacimiento
+    - Ciudad
+    - País (con una lista desplegable de países)
+    - Foto de perfil (opcional)
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Daniel Fernández Estevez, Sandra Moya del Amo">
+    <meta name="description" content="Página principal para usuarios registrados en INMOLINK">
+
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="css/inmolink.css">
+    <link rel="stylesheet" href="css/mediaQuery.css">
+    <link rel="stylesheet" href="css/iconos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Estilos alternativos -->
+    <link rel="alternate stylesheet" type="text/css" href="css/noche.css" title="modoNoche">
+    <link rel="alternate stylesheet" type="text/css" href="css/alto_contraste.css" title="altoContraste">
+    <link rel="alternate stylesheet" type="text/css" href="css/texto_grande.css" title="textoGrande">
+    <link rel="alternate stylesheet" type="text/css" href="css/texto_grande_dislexia.css" title="textoGrandeDislexia">
+    <link rel="alternate stylesheet" type="text/css" href="css/alto_contraste_grande.css" title="altoContraste+textoGrande">
+
+    <!-- Estilo para impresión -->
+    <link rel="stylesheet" type="text/css" href="css/imprimir.css" media="print">
+
+    <title>INMOLINK - Registro</title>
+</head>
+<body>
+
+    <header>
+         <a href="index.html">
+            <img src="img/logo.png" alt="Logo INMOLINK" width="100" height="100" class="logo-normal">
+            <img src="img/!logo.png" alt="Logo INMOLINK blanco" width="100" height="100" class="logo-contraste">
+        </a>
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i> Inicio</a></li>
+            <li><a href="formulario_busqueda.html"><i class="fa-solid fa-magnifying-glass"></i> Buscar Propiedades</a></li>
+            <li><a href="inicio_sesion.html"><i class="fa-solid fa-user"></i> Inicio de Sesión</a></li>
+            <li><a href="registro_usuario.html"><i class="fa-solid fa-user-plus"></i> Registro de Usuario</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main>
+        <h1>REGISTRO USUARIO</h1>
+    <form id="registerForm" action="index_user.html" method="post" novalidate>
+            <fieldset>
+                <legend>Datos de Registro</legend>
+                <br>
+
+                <label for="usuario">Nombre de usuario: </label>
+                <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario">
+                <br>
+                <br>
+
+                <label for="contrasena">Contraseña: </label>
+                <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña">
+                <br>
+                <br>
+
+                <label for="confirmar_contrasena">Confirmar Contraseña: </label>
+                <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" placeholder="Confirmar Contraseña">
+                <br>
+                <br>
+
+                <label for="email">Dirección de correo electrónico: </label>
+                <input type="text" id="email" name="email" placeholder="Correo electrónico">
+                <br>
+                <br>
+
+                <section class="radio-group" aria-labelledby="sexo_label">
+                <h4 id="sexo_label">Sexo:</h4>
+                <label for="sexo_hombre">
+                    Hombre
+                    <input type="radio" id="sexo_hombre" name="sexo" value="hombre">
+                </label>
+                <label for="sexo_mujer">
+                    Mujer
+                    <input type="radio" id="sexo_mujer" name="sexo" value="mujer">
+                </label>
+                <label for="sexo_otro">
+                    Otro
+                    <input type="radio" id="sexo_otro" name="sexo" value="otro">
+                </label>
+                </section>
+                <br>
+                <br>
+
+
+                <label>Fecha de nacimiento: </label>
+                <input type="number" id="dia_nacimiento" name="dia_nacimiento" placeholder="Día" style="width:70px" min="1" max="31" step="1"> 
+                <select id="mes_nacimiento" name="mes_nacimiento" aria-label="Mes"></select>
+                <input type="number" id="anio_nacimiento" name="anio_nacimiento" placeholder="Año" style="width:90px" min="1900" max="2100" step="1">
+                <!-- Hidden field que realmente se enviará con formato YYYY-MM-DD -->
+                <input type="hidden" id="fecha_nacimiento" name="fecha_nacimiento">
+                <br>
+                <br>
+
+                <label for="ciudad">Ciudad</label>
+                <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad de residencia">
+                <br>
+                <br>
+
+                <label for="pais">País:</label>
+                <input list="lista-paises" id="pais" name="pais" placeholder="Selecciona un país">
+                <datalist id="lista-paises">
+                    <option value="España">
+                    <option value="México">
+                    <option value="Argentina">
+                    <option value="Colombia">
+                    <option value="Chile">
+                    <option value="Perú">
+                    <option value="Italia">
+                    <option value="Grecia">
+                    <option value="Canada">
+                    <option value="Honduras">
+                </datalist>
+                <br>
+                <br>
+
+                <label for="foto">Foto de perfil: </label>
+                <input type="file" id="foto" name="foto" accept="image/*">
+                <br>
+                <br>
+
+                <button type="submit">Registrarme</button>
+            </fieldset>
+        </form>
+
+    <script src="js/validaccion.js"></script>
+
+        <p class="registro-link"><strong>¿Ya tienes cuenta? </strong>
+            <a href="inicio_sesion.html" class="boton-enlace">Inicia sesion aqui</a>
+        </p>
+
+    </main>
+
+    <footer>
+    <p>&copy; 2025 INMOLINK Proyecto DAW Ingeniería Multimedia | 
+    <a href="accesibilidad.html">Accesibilidad</a></p>
+    </footer>
+</body>
+</html>

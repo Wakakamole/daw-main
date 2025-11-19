@@ -1,0 +1,958 @@
+/* Reglas adicionales para evitar overflow por elementos flexibles en móviles */
+/* =====================================================================
+   FUENTES Y VARIABLES GLOBALES
+===================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* Importar los archivos CSS separados */
+@import url('./variables.css');
+@import url('./base.css');
+@import url('./header_footer.css');
+@import url('./main.css');
+
+
+
+
+/************************
+  ANUNCIOS
+*************************/
+main > ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+
+}
+
+/* para las ofertas de pisos */
+article {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: var(--transicion);
+  border: 1px solid #eee;
+}
+
+article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Título del anuncio */
+article h3 {
+  background-color: var(--color-secundario);
+  color: #fff;
+  padding: 1rem;
+  margin: 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Imagen y enlace */
+article a {
+  display: block;
+  padding: 1rem;
+  text-align: center;
+}
+
+article img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: var(--transicion);
+}
+
+article img:hover {
+  transform: scale(1.05);
+}
+
+/* Pie del anuncio (detalles) */
+article footer {
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+}
+
+article footer p { /* Párrafos dentro del pie */
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+article footer p:first-child { /* Primer párrafo (ubicación) */
+  font-size: 1rem;
+  color: var(--color-secundario);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+article footer p strong { /* Texto en negrita dentro del pie */
+  color: var(--color-secundario);
+}
+
+/* Precio destacado */
+article footer p:last-child {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primario);
+  text-align: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid #eee;
+}
+
+
+
+/*********************************** 
+MENÚ DE USUARIO EN PERFIL 
+************************************/
+.perfil-menu-lista {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 2em auto 2em auto;
+  padding: 2em 1em;
+  background: #f7fbfd;
+  border-radius: 18px;
+  max-width: 1000px;
+  box-shadow: 0 2px 12px rgba(120,169,185,0.08);
+  border: 2px solid var(--color-secundario);
+}
+
+.perfil-menu {
+  flex: 1 1 180px;
+  min-width: 180px;
+  max-width: 220px;
+  font-size: 1.1em;
+  justify-content: flex-start;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  padding-left: 1.2em;
+  box-sizing: border-box;
+}
+.perfil-menu i {
+  font-size: 1.2em;
+  color: var(--color-secundario);
+}
+
+
+
+
+/* TABLAS */
+table {
+  table-layout: fixed;
+  width: 100%;
+  }
+  thead th:nth-child(1) {
+  width: 40%;
+  }
+  thead th:nth-child(2) {
+  width: 40%;
+  }
+  thead th:nth-child(3) {
+  width: 20%;
+  }
+  th, td {
+    padding: 20px;
+}
+
+#tableContainer {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f7fbfd;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow-x: auto; 
+}
+
+#tabla-costes-generada {
+  table-layout: fixed; 
+  width: 100%;
+  min-width: 800px;
+}
+
+/* Aplicar 16.66% a todas las columnas usando las reglas de nth-child */
+#tabla-costes-generada thead th:nth-child(1),
+#tabla-costes-generada thead th:nth-child(2),
+#tabla-costes-generada thead th:nth-child(3),
+#tabla-costes-generada thead th:nth-child(4),
+#tabla-costes-generada thead th:nth-child(5),
+#tabla-costes-generada thead th:nth-child(6) {
+  width: 16.66%; 
+}
+
+#tabla-costes-generada thead th {
+  vertical-align: middle;
+  text-align: center;
+}
+#tabla-costes-generada tbody td:nth-child(n+3) {
+  text-align: center;
+  font-weight: 600;
+}
+
+  /* Bordes tabla */
+table, tr, th, td {
+  border-collapse: collapse;
+  border: 0.5px solid #2a7ae2;
+}
+
+thead th, tfoot th, tfoot td {
+  background: linear-gradient(to bottom, #b0bdce, #9fafc4);
+}
+
+/* Estilo cebra */
+tbody tr:nth-child(odd) {
+  background-color: #bccde6;
+  }
+  tbody tr:nth-child(even) {
+  background-color: #d6dfeb;
+}
+
+/* BOTÓN MOSTRAR / OCULATAR TABLA */
+#mostrarTabla {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 1.5rem auto 1.5rem auto;
+
+  background-color: var(--color-secundario);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem 1.5rem;
+  cursor: pointer;
+  transition: var(--transicion);
+  box-shadow: 0 3px 8px rgba(120, 169, 185, 0.35);
+  text-transform: uppercase;
+}
+
+#mostrarTabla:hover {
+  background-color: #6d9abb; 
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(120, 169, 185, 0.45);
+}
+
+#mostrarTabla:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(120, 169, 185, 0.35);
+}
+
+/* FORUMULARIOS */
+form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin: 2rem auto;
+  transition: var(--transicion);
+}
+  form, fieldset, .radio-group, .radio-group label, fieldset label { min-width: 0; }
+  /* Como último recurso ocultar overflow-x en pantallas muy estrechas para evitar scroll horizontal indeseado */
+  body { overflow-x: hidden; }
+
+fieldset {
+  border: 2px solid var(--color-secundario);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 8px rgba(120,169,185,0.1);
+  transition: var(--transicion);
+}
+
+fieldset:hover {      /* efecto hover (cuando el ratón pasa sobre el fieldset) */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(120,169,185,0.2);
+}
+
+fieldset legend {        /* titulo del fieldset */
+  font-weight: 700;
+  color: var(--color-primario);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: #fff6ed;
+  border: 1px solid var(--color-primario);
+  font-size: 1.2rem;
+}
+
+/* Evitar que el legend se salga del contenedor en pantallas pequeñas */
+fieldset legend {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Reducir padding y tamaño del legend en móviles para que quepa mejor */
+
+fieldset label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: var(--color-texto);
+}
+
+fieldset input, fieldset select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1.8px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  color: var(--color-texto);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: var(--transicion);
+}
+
+fieldset input:focus, fieldset select:focus {
+  outline: none;
+  border-color: var(--color-secundario);
+  box-shadow: 0 0 5px rgba(120,169,185,0.4);
+}
+
+fieldset input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+
+fieldset button[type="submit"] {
+  display: block;
+  width: 100%;
+  background-color: var(--color-primario);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem;
+  cursor: pointer;
+  transition: var(--transicion);
+  box-shadow: 0 3px 8px rgba(210,110,28,0.25);
+  margin-bottom: 1rem; /* Espaciado entre los botones */
+}
+
+fieldset button[type="submit"]:hover {  
+  background-color: #b85b14;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(210,110,28,0.35);
+}
+
+fieldset button[type="submit"]:active {     /* Botón al hacer clic */
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(210,110,28,0.25);
+}
+
+fieldset button[type="reset"] {
+  display: block;
+  width: 100%;
+  background-color: #db2e03;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem;
+  cursor: pointer;
+  transition: var(--transicion);
+  box-shadow: 0 3px 8px rgba(210,110,28,0.25);
+}
+
+fieldset button[type="reset"]:hover {
+  background-color: #b83514;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(210,110,28,0.35);
+}
+
+fieldset button[type="reset"]:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(210,110,28,0.25);
+}
+
+fieldset + fieldset {     /* espacio entre fieldsets */
+  margin-top: 2rem;
+}
+
+/* Fieldset dentro de fieldset */
+fieldset fieldset {
+  border: 1.5px solid var(--color-secundario);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  background-color: #f9f9f9;
+  box-shadow: 0 1px 6px rgba(120,169,185,0.05);
+}
+
+fieldset fieldset legend {
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #fff8f0; 
+  border: 1px solid var(--color-secundario);
+}
+
+fieldset input[type="color"] {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  width: 250px;
+}
+
+.radio-group label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-weight: normal;
+}
+
+.radio-group input[type="radio"] {
+  margin: 0;
+  accent-color: var(--color-primario);
+}
+
+/* Mostrar el grupo de radios en línea dentro del formulario de registro */
+form#registerForm .radio-group {
+  flex-direction: row !important;
+  gap: 0.6rem;
+  width: auto !important;
+  align-items: center;
+}
+form#registerForm .radio-group label {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.6rem;
+  background-color: transparent;
+  border: 1px solid #eee;
+  border-radius: 6px;
+}
+form#registerForm .radio-group input[type="radio"] {
+  margin: 0;
+}
+
+/* Refuerzo: permitir wrapping y que las labels no obliguen a crecer más allá del contenedor */
+form#registerForm .radio-group {
+  flex-wrap: wrap;
+}
+form#registerForm .radio-group label {
+  min-width: 0;
+}
+
+/* Responsive: en pantallas muy estrechas apilar las opciones de sexo para evitar solapamientos */
+
+/* Ajustes específicos para los controles de fecha en el formulario de registro
+   Usamos selectores con mayor especificidad para sobrescribir las reglas
+   generales que ponen inputs dentro de fieldset al 100% de ancho. */
+form#registerForm fieldset #dia_nacimiento,
+form#registerForm fieldset #mes_nacimiento,
+form#registerForm fieldset #anio_nacimiento {
+  display: inline-block !important;
+  vertical-align: middle;
+  margin-right: 0.6rem;
+  box-sizing: border-box;
+}
+form#registerForm fieldset #dia_nacimiento { width: 60px !important; }
+form#registerForm fieldset #mes_nacimiento { width: 140px !important; }
+form#registerForm fieldset #anio_nacimiento { width: 90px !important; }
+form#registerForm fieldset #dia_nacimiento,
+form#registerForm fieldset #anio_nacimiento {
+  text-align: center;
+  padding: 0.5rem 0.4rem;
+}
+
+
+
+
+
+#confirmacion {
+  background-color: #fff;
+  padding: 3rem 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 2rem auto;
+  border-top: 5px solid var(--color-secundario);
+}
+
+#confirmacion h1 {
+  color: var(--color-secundario); 
+  font-size: 2.2em;
+  font-weight: 700;
+  text-align: center;
+  border-bottom: 3px solid var(--color-primario);
+  padding-bottom: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+#confirmacion p {
+  text-align: center;
+  font-size: 1em;
+  color: var(--color-texto);
+  margin-bottom: 2.5rem;
+}
+
+#confirmacion h3 {
+  color: var(--color-primario);
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+
+#confirmacion ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* Elementos de la lista */
+#confirmacion ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #f0f0f0; /* Línea de puntos para separar datos */
+  display: flex; /* Para alinear clave y valor */
+  justify-content: space-between; /* Clave a la izquierda, valor a la derecha */
+  align-items: center;
+  font-size: 1em;
+}
+
+#confirmacion ul li:last-child {
+  border-bottom: none;
+}
+
+/* Texto en negrita (las etiquetas de los datos) */
+#confirmacion ul li strong {
+  color: var(--color-secundario); /* Destacar la etiqueta con el color secundario */
+  font-weight: 600;
+}
+
+/* Estilo para el Coste Total */
+#confirmacion h3:last-of-type + p {
+  text-align: right;
+  font-size: 1.6em;
+  font-weight: 700;
+  color: var(--color-primario);
+  background-color: #fcf8f5;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  border: 1px solid #f0e6dd;
+}
+
+
+#confirmacion a button {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 3rem auto 0 auto;
+  background-color: var(--color-secundario);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem;
+  cursor: pointer;
+  transition: var(--transicion);
+  box-shadow: 0 3px 8px rgba(120, 169, 185, 0.3);
+  text-transform: uppercase;
+}
+
+#confirmacion a button:hover {
+  background-color: var(--color-primario);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(210, 110, 28, 0.35);
+}
+
+
+/***********************
+  DETALLE ANUNCIO  
+***********************/
+
+#cabecera-detalle h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--color-secundario);
+  border-bottom: 2px solid var(--color-primario);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#imagen-principal img {
+  display: block;
+  width: 75%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  margin: 0 auto 1.5rem auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#info-basica {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.5rem 1rem;
+  margin-bottom: 2rem;
+  color: var(--color-texto);
+}
+
+#info-basica p {
+  background: #f9fafb;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+#galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+#galeria img {
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+#descripcion h3,
+#caracteristicas h3 {
+  color: var(--color-secundario);
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+#descripcion p {
+  text-align: justify;
+  line-height: 1.6;
+  color: var(--color-texto);
+  margin-bottom: 2rem;
+}
+
+#caracteristicas ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+#caracteristicas li {
+  background-color: #f7fbfd;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--color-secundario);
+}
+
+#contacto-anunciante {
+  text-align: center;
+}
+
+#contacto-anunciante button {
+  background-color: var(--color-primario);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transicion);
+  box-shadow: 0 4px 10px rgba(210,110,28,0.25);
+}
+
+#contacto-anunciante button:hover {
+  background-color: #b85b14;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(210,110,28,0.35);
+}
+
+
+
+/***********************
+  MIS MENSAJES  
+***********************/
+
+.mis-mensajes-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+/* Centrar el bloque de título y descripción en la página de mensajes */
+.mis-mensajes-main > section:first-child {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.columna-1, .columna-2 {
+  width: 48%;
+  max-width: 520px;
+  min-width: 280px;
+  margin-bottom: 2.5rem;
+}
+
+.mensaje-enviado {
+  background: #eaf6fa;
+  margin-left: auto;
+}
+.mensaje-recibido {
+  background: #fff6ed;
+  margin-right: auto;
+}
+
+.mensaje-enviado header,
+.mensaje-recibido header {
+  margin-bottom: 0.4em;
+  font-size: 0.98em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+}
+
+.mensaje-recibido header {
+  background: var(--color-primario);
+  color: #fff;
+  border-radius: 22px 22px 22px 8px;
+  padding: 0.5em 1em;
+}
+
+.mensaje-enviado footer,
+.mensaje-recibido footer {
+  margin-top: 0.4em;
+  font-size: 0.92em;
+  color: #888;
+  background: none;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.mensaje-enviado p,
+.mensaje-recibido p {
+  margin: 0.5em 0 0.5em 0;
+  font-size: 1em;
+  padding: 0 1em;
+}
+
+
+
+
+/*************************************************
+AVISO- pero tamb está aplicado para ERROR404
+**************************************************/
+
+.aviso-tarjeta {
+  background: #fff;
+  max-width: 480px;
+  margin: 3rem auto 0 auto;
+  padding: 2.5rem 2rem 2rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(120,169,185,0.13);
+  text-align: center;
+}
+.aviso-tarjeta h1 {
+  color: var(--color-primario);
+  font-size: 2.2em;
+  font-weight: 700;
+  margin-bottom: 1.2em;
+}
+.aviso-tarjeta p {
+  margin-bottom: 1.2em;
+  font-size: 1.08em;
+}
+.aviso-tarjeta p:first-of-type {
+  font-weight: 700;
+}
+.aviso-tarjeta > a {
+  display: inline-block;
+  margin: 1.5em 0.75em 0 0.75em;
+}
+
+header a .logo-normal {
+    display: inline !important;
+}
+header a .logo-contraste {
+    display: none !important;
+}
+
+
+/* ========================================
+   PÁGINA ACCESIBILIDAD
+======================================== */
+
+
+/* Secciones */
+.accesibilidad-seccion {
+    background: #fff;
+    padding: 2rem 2.5rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid var(--color-secundario);
+    transition: var(--transicion);
+}
+
+.accesibilidad-seccion:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.accesibilidad-seccion h2 {
+    color: var(--color-secundario);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e0e0e0;
+    text-align: left;
+}
+
+.accesibilidad-seccion h3 {
+    color: var(--color-primario);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.8rem;
+}
+
+.accesibilidad-seccion p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.accesibilidad-seccion a {
+    color: var(--color-secundario);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.accesibilidad-seccion a:hover {
+    color: var(--color-primario);
+}
+
+.accesibilidad-seccion em {
+    color: var(--color-primario);
+    font-style: italic;
+    font-weight: 600;
+}
+
+.accesibilidad-seccion strong {
+    color: var(--color-secundario);
+    font-weight: 700;
+}
+
+/* Listas */
+.lista-caracteristicas,
+.lista-estilos {
+    list-style: none;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.lista-caracteristicas {
+    padding-left: 0;
+}
+
+.lista-caracteristicas li {
+    background: #f7fbfd;
+    padding: 0.9rem 1.2rem;
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-primario);
+    transition: var(--transicion);
+}
+
+.lista-caracteristicas li:hover {
+    background: #eaf6fa;
+    transform: translateX(8px);
+}
+
+.lista-caracteristicas li::before {
+    content: "✓ ";
+    color: var(--color-secundario);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.lista-estilos {
+    background: #fff6ed;
+}
+
+.lista-estilos li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.lista-estilos li:last-child {
+    border-bottom: none;
+}
+
+/* Instrucciones */
+.instrucciones-navegador {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+.instrucciones-navegador ol {
+    padding-left: 2rem;
+}
+
+.instrucciones-navegador kbd {
+    background: var(--color-secundario);
+    color: #fff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Mostrar controles de fecha en línea sin elementos adicionales */
+label[for="dia_nacimiento"], label[for="mes_nacimiento"], label[for="anio_nacimiento"] { display: inline-block; }
+#dia_nacimiento, #mes_nacimiento, #anio_nacimiento {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+#dia_nacimiento { width: 60px; }
+#mes_nacimiento { min-width: 120px; }
+#anio_nacimiento { width: 80px; }

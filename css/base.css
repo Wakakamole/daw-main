@@ -1,0 +1,50 @@
+/* Archivo de estilos base, algo que se usa en muchas páginas, es decir q las páginas lo comparten*/
+
+/*RESETEO BÁSICO */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*CONTENEDOR GLOBAL */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/******************
+ENLACES DE ACCIÓN COMO BOTÓN 
+*******************/
+.boton-enlace {
+  display: inline-block;
+  background: var(--color-secundario);
+  color: #fff;
+  padding: 0.7em 1.5em;
+  border-radius: 25px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  margin-top: 1em;
+}
+
+.boton-enlace:hover {
+  background: var(--color-primario);
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+}

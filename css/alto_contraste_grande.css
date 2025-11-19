@@ -1,0 +1,7 @@
+/*
+	Hoja combinada: Alto contraste + Texto grande
+	Import alto_contraste.css y texto_grande.css
+	Importancia del orden: primero contraste (colores), luego tamaño tipográfico.
+*/
+@import url('alto_contraste.css');
+@import url('texto_grande.css');

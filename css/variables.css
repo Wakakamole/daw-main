@@ -1,0 +1,21 @@
+/* Archivo de variables CSS */
+
+:root {
+  /* Paleta de colores */
+  --color-primario: #d26e1c;          /* Gris azulado */
+  --color-secundario: #78a9b9;        /* Verde azulado suave */
+  --color-texto: #2a2a2a;             /* Texto principal */
+  --color-fondo: #f2fdff;             /* Fondo general */
+  --color-footer-bg: #78a9b9;         /* Fondo del footer */
+  --color-footer-texto: #ffffff;      /* Texto del footer */
+
+  /* Transición global */
+  --transicion: all 0.3s ease;
+
+  /* Variables para el mensaje */
+  --color-mensaje-fondo: #f9f9f9;
+  --color-mensaje-texto: #333;
+  --color-mensaje-borde: #d26e1c;
+}
+
+

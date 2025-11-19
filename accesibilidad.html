@@ -1,0 +1,166 @@
+<!-- PÁGINA ACCESIBILIDAD-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Daniel Fernández Estevez, Sandra Moya del Amo">
+    <meta name="description" content="Página donde se describen las características de accesibilidad del sitio web INMOLINK.">
+
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="css/inmolink.css">
+    <link rel="stylesheet" href="css/mediaQuery.css">
+    <link rel="stylesheet" href="css/iconos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Estilos alternativos -->
+    <link rel="alternate stylesheet" type="text/css" href="css/noche.css" title="modoNoche">
+    <link rel="alternate stylesheet" type="text/css" href="css/alto_contraste.css" title="altoContraste">
+    <link rel="alternate stylesheet" type="text/css" href="css/texto_grande.css" title="textoGrande">
+    <link rel="alternate stylesheet" type="text/css" href="css/texto_grande_dislexia.css" title="textoGrandeDislexia">
+    <link rel="alternate stylesheet" type="text/css" href="css/alto_contraste_grande.css" title="altoContraste+textoGrande">
+
+    <!-- Estilo para impresión -->
+    <link rel="stylesheet" type="text/css" href="css/imprimir.css" media="print">
+
+    <title>INMOLINK</title>
+</head>
+<body>
+
+    <header>
+    <a href="index.html">
+        <img src="img/logo.png" alt="Logo INMOLINK" width="100" height="100" class="logo-normal">
+        <img src="img/!logo.png" alt="Logo INMOLINK blanco" width="100" height="100" class="logo-contraste">
+    </a>
+    
+        <nav>
+            <ul>
+                <li><a href="index_user.html"><i class="fa-solid fa-house-chimney"></i> Inicio</a></li>
+                <li><a href="formulario_busqueda.html"><i class="fa-solid fa-magnifying-glass"></i> Buscar Propiedades</a></li>
+                <li><a href="error_404_user.html"><i class="fa-regular fa-square-plus"></i>  Subir anuncio</a></li>
+                <li>
+                    <details>
+                        <summary>
+                            <img src="img/user.webp" alt="Foto de perfil" width="40" height="40">
+                        </summary>
+                        <ul>
+                            <li><a href="mi_perfil.html">Mi Perfil</a></li>
+                            <li><a href="index.html">Cerrar Sesión</a></li>
+                            
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </nav>
+        <search>
+            <h2>Búsqueda rápida</h2>
+            <form action="resultado_busqueda.html" method="GET">
+                <input type="text" name="query" placeholder="Escribe aquí...">
+                <button type="submit">Intro</button>
+            </form>
+        </search>
+    </header> 
+
+    <main>
+        <section>
+            <h1>DECLARACIÓN DE ACCESIBILIDAD</h1>
+        </section>
+
+        <section class="accesibilidad-seccion">
+            <h2>Alcance</h2>
+            <p>Esta declaración describe el nivel de accesibilidad de las páginas públicas del proyecto <strong>INMOLINK</strong>. Incluye medidas técnicas y de contenido adoptadas para mejorar la accesibilidad.</p>
+        </section>
+
+        <section class="accesibilidad-seccion">
+            <h2>Estado de conformidad</h2>
+            <p>Se ha diseñado el sitio con criterios de accesibilidad web. Nuestro objetivo es cumplir, en lo posible, las <strong>WCAG 2.1 Nivel AA</strong>. No obstante, puede haber páginas o elementos que no alcancen todavía todos los requisitos.</p>
+        </section>
+
+        <section class="accesibilidad-seccion">
+            <h2>Características de accesibilidad implementadas</h2>
+            <ul class="lista-caracteristicas">
+                <li>Uso de HTML semántico (header, nav, main, article, footer, form).</li>
+                <li>Contrastes de color pensados para lectura.</li>
+                <li>Hojas de estilo alternativas disponibles: modo noche, alto contraste, texto grande y combinación.</li>
+                <li>Control de foco visible en enlaces y controles.</li>
+                <li>Diseño adaptable (responsive) y tamaños táctiles mínimos para botones.</li>
+            </ul>
+        </section>
+
+        <section class="accesibilidad-seccion estilos-alternos">
+            <h2>Cómo activar los estilos accesibles</h2>
+            <p>Hemos publicado varias hojas de estilo alternativas que puedes seleccionar desde el navegador. Los títulos de estilo disponibles son:</p>
+            <ul class="lista-estilos">
+                <li><strong>Estilo principal</strong> (por defecto)</li>
+                <li><strong>modoNoche</strong> (tema oscuro)</li>
+                <li><strong>altoContraste</strong> (alto contraste)</li>
+                <li><strong>textoGrande</strong> (tamaño de letra aumentado)</li>
+                <li><strong>textoGrandeDislexia</strong> (tamaño aumentado + OpenDyslexic)</li>
+                <li><strong>altoContraste+textoGrande</strong> (combinado)</li>
+            </ul>
+
+            <div class="instrucciones-navegador">
+                <h3>En Mozilla Firefox (recomendado para pruebas)</h3>
+                <ol>
+                    <li>Abre la página.</li>
+                    <li>Pulsa <kbd>Alt</kbd> para mostrar la barra de menú.</li>
+                    <li>Ve a <strong>Ver &gt; Estilo de página</strong> y selecciona el estilo deseado.</li>
+                </ol>
+
+                <h3>Si usas Google Chrome</h3>
+                <p>Chrome no ofrece menú nativo para seleccionar estilos alternativos. Para probar una hoja de impresión o emular la impresión, usa la vista previa de impresión o las herramientas de desarrollador (Emulate CSS media → print). Si deseas que los usuarios cambien estilos desde la propia web, contacta con nosotros (más abajo hay un formulario) y te indicamos una solución basada en JavaScript y cookies.</p>
+            </div>
+        </section>
+
+        <section class="accesibilidad-seccion">
+            <h2>Tipografía y lectura</h2>
+            <p>En estilos accesibles hemos incluido la opción de usar <em>OpenDyslexic</em>.</p>
+        </section>
+
+        <section class="accesibilidad-seccion">
+            <h2>Navegación y teclado</h2>
+            <p>La navegación por teclado está soportada: puedes recorrer enlaces y controles con <kbd>Tab</kbd>. Los elementos interactivos muestran un foco visible.</p>
+        </section>
+
+        <section class="accesibilidad-seccion formulario-contacto">
+            <h2>Cómo reportar incidencias o pedir alternativas</h2>
+            <p>Si encuentras problemas de accesibilidad, por favor, contáctanos usando el formulario debajo o envía un correo a <a href="mailto:daw@inmolink.example">daw@inmolink.example</a>. Incluye:</p>
+            <ul>
+                <li>URL donde has encontrado el problema.</li>
+                <li>Descripción del problema y dispositivo/navegador usado.</li>
+                <li>Tu propuesta (si tienes) o captura de pantalla.</li>
+            </ul>
+
+            <form novalidate>
+                <fieldset>
+                    <legend>Formulario rápido de contacto</legend>
+
+                    <label for="nombre">Nombre</label><br>
+                    <input id="nombre" name="nombre" type="text" aria-required="true"><br><br>
+
+                    <label for="email">Correo electrónico</label><br>
+                    <input id="email" name="email" type="text" inputmode="email" aria-required="true"><br><br>
+
+                    <label for="url">URL afectada</label><br>
+                    <input id="url" name="url" type="url" placeholder="https://..."><br><br>
+
+                    <label for="mensaje">Mensaje</label><br>
+                    <textarea id="mensaje" name="mensaje" rows="6" aria-required="true"></textarea><br><br>
+
+                    <p>
+                        <button type="submit">Enviar</button>
+                        <button type="reset">Limpiar</button>
+                    </p>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 INMOLINK Proyecto DAW Ingeniería Multimedia | 
+        <a href="accesibilidad.html">Accesibilidad</a></p>
+    </footer>
+    
+</body>
+</html>

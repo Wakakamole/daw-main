@@ -1,0 +1,240 @@
+<!-- PÁGINA DE SOLICITUD DE FOLLETO -->
+<!--
+    Página que permite a un usuario solicitar la impresión de un folleto publicitario.
+    Incluye información sobre tarifas y un formulario de solicitud con los siguientes campos:
+
+    - Nombre completo (*)
+    - Correo electrónico (*)
+    - Texto adicional
+    - Dirección completa (*):
+        - Calle
+        - Número
+        - Código Postal
+        - Localidad
+        - Provincia (lista desplegable)
+        - País
+    - Teléfono
+    - Color de la portada
+    - Número de copias
+    - Resolución de impresión (selección de dpi)
+    - Anuncio seleccionado (*)
+    - Fecha de recepción
+    - Opciones de impresión a color o en blanco y negro
+    - Opción de imprimir el precio en el folleto
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Daniel Fernández Estevez, Sandra Moya del Amo">
+    <meta name="description" content="Página principal para usuarios registrados en INMOLINK">
+
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="css/inmolink.css">
+    <link rel="stylesheet" href="css/mediaQuery.css">
+    <link rel="stylesheet" href="css/iconos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Estilos alternativos -->
+    <link rel="alternate stylesheet" type="text/css" href="css/noche.css" title="modoNoche">
+    <link rel="alternate stylesheet" type="text/css" href="css/alto_contraste.css" title="altoContraste">
+    <link rel="alternate stylesheet" type="text/css" href="css/texto_grande.css" title="textoGrande">
+    <link rel="alternate stylesheet" type="text/css" href="css/texto_grande_dislexia.css" title="textoGrandeDislexia">
+    <link rel="alternate stylesheet" type="text/css" href="css/alto_contraste_grande.css" title="altoContraste+textoGrande">
+
+    <!-- Estilo para impresión -->
+    <link rel="stylesheet" type="text/css" href="css/imprimir.css" media="print">
+
+    <title>INMOLINK - Solicitar Folleto</title>
+</head>
+
+<body>
+    <header>
+         <a href="index.html">
+            <img src="img/logo.png" alt="Logo INMOLINK" width="100" height="100" class="logo-normal">
+            <img src="img/!logo.png" alt="Logo INMOLINK blanco" width="100" height="100" class="logo-contraste">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index_user.html"><i class="fa-solid fa-house-chimney"></i> Inicio</a></li>
+                <li><a href="formulario_busqueda.html"><i class="fa-solid fa-magnifying-glass"></i> Buscar Propiedades</a></li>
+                <li><a href="error_404_user.html"><i class="fa-regular fa-square-plus"></i>  Subir anuncio</a></li>
+                <li>
+                    <details>
+                        <summary>
+                            <img src="img/user.webp" alt="Foto de perfil" width="40" height="40">
+                            Usuario
+                        </summary>
+                        <ul>
+                            <li><a href="mi_perfil.html">Mi Perfil</a></li>
+                            <li><a href="index.html">Cerrar Sesión</a></li>
+                            
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </nav>
+        <search>
+            <h2>Búsqueda rápida</h2>
+            <form action="resultado_busqueda.html" method="GET">
+                <input type="text" name="query" placeholder="Escribe aquí...">
+                <button type="submit">Intro</button>
+            </form>
+        </search>
+    </header> 
+
+    <main>
+        <section id="descipcion-folleto">
+            <h1>SOLICITUD DE IMPRESIÓN DE FOLLETO PUBLICITARIO</h1>
+            <p>
+                Mediante esta opción puedes solicitar la impresión y envío de uno de tus anuncios.
+                El precio variará en función del número de páginas del folleto, número de fotos, impresión en color y resolución que desees.
+            </p>
+        </section>
+
+        <!-- Tabla de las tarifas -->
+        <section id="tabla-tarifas">
+            <h3>Tarifas</h3>
+
+            <button id="mostrarTabla">Mostrar Tabla de Costes</button>
+            <div id="tableContainer" style="display: none;"></div>
+        </section>
+        <script src="js/tabla_costes.js"></script>
+
+
+        <!-- Formulario de solicitud -->
+        <section id="formulario">
+            <h3>Formulario de solicitud</h3>
+            <p>
+                Rellena el siguiente formulario aportando todos los detalles para confeccionar tu folleto publicitario. 
+               Los campos marcados con un asterisco (*) son obligatorios.
+            </p>
+
+            <form action="solicitar_folleto_respuesta.html" method="post">
+                <fieldset>
+                    <legend>Datos Personales</legend>
+                    <!-- Nombre -->
+                    <label for="nombre">Nombre completo (*):</label>
+                    <input type="text" id="nombre" name="nombre" maxlength="200" required>
+                    <br><br>
+
+                    <!-- Correo electrónico -->
+                    <label for="email">Correo electrónico (*):</label>
+                    <input type="email" id="email" name="email" maxlength="200" required>
+                    <br><br>
+
+                    <!-- Texto adicional -->
+                    <label for="textoAdicional">Texto adicional:</label>
+                    <textarea id="textoAdicional" name="textoAdicional" maxlength="4000" rows="4" cols="50"></textarea>
+                    <br><br>
+
+
+                    <!-- Dirección -->
+                    <fieldset>
+                        <legend>Dirección (*)</legend>
+                        
+                        <label for="calle">Calle:</label>
+                        <input type="text" id="calle" name="calle" required>
+                        
+                        <label for="numero">Número:</label>
+                        <input type="text" id="numero" name="numero" required>
+                        
+                        <label for="cp">CP:</label>
+                        <input type="text" id="cp" name="cp" required>
+                        
+                        <label for="localidad">Localidad:</label>
+                        <input type="text" id="localidad" name="localidad" required>
+                        
+                        <label for="input-provincia">Provincia:</label>
+                        <input list="provincias-lista" id="input-provincia" name="provincia" required> 
+                        <datalist id="provincias-lista">
+                            <option value="Ciudad Real">
+                            <option value="Albacete">
+                            <option value="Toledo">
+                            <option value="Cuenca">
+                            <option value="Guadalajara">
+                            <option value="Alicante">
+                            <option value="Valencia">
+                            <option value="Castellon">
+                            <option value="A Coruña">
+                            <option value="Lugo">
+                            <option value="Ourense">
+                            <option value="Pontevedra">
+                        </datalist>
+
+                        <label for="pais">País:</label>
+                        <input type="text" id="pais" name="pais" required>
+
+                    </fieldset>
+                    <br><br>
+
+                    <!-- Telefono -->
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono">
+                    <br><br>
+
+                    <!-- Color de la portada -->
+                    <label for="colorPortada">Color de la portada:</label>
+                    <input type="color" id="colorPortada" name="colorPortada" value="#000000">
+                    <br><br>
+
+                    <!-- Número de copias -->
+                    <label for="copias">Número de copias:</label>
+                    <input type="number" id="copias" name="copias" min="1" max="99" value="1">
+                    <br><br>
+
+                    <!-- Resolución de impresión -->
+                    <label for="resolucion">Resolución de impresión:</label>
+                    <select id="resolucion" name="resolucion">
+                        <option value="150">150 dpi</option>
+                        <option value="300">300 dpi</option>
+                        <option value="450">450 dpi</option>
+                        <option value="600">600 dpi</option>
+                        <option value="750">750 dpi</option>
+                        <option value="900">900 dpi</option>
+                    </select>
+                    <br><br>
+
+                    <!-- Anuncio -->
+                    <label for="anuncio">Anuncio (*):</label>
+                    <select id="anuncio" name="anuncio" required>
+                        <option value="anuncio1">Anuncio 1</option>
+                        <option value="anuncio2">Anuncio 2</option>
+                    </select><br><br>
+
+                    <!-- Fecha de recepción -->
+                    <label for="fechaRecepcion">Fecha de recepción:</label>
+                    <input type="date" id="fechaRecepcion" name="fechaRecepcion">
+                    <br><br>
+
+                    <!-- Impresión a color -->
+                    <p>Color de la impresión</p>
+                    <input type="radio" id="aColor" name="colorImpresion" value="color">
+                    <label for="aColor">Color</label>
+                    <input type="radio" id="colorNo" name="colorImpresion" value="byn">
+                    <label for="colorNo">Blanco y negro</label>
+                    <br><br>
+
+                    <!-- Impresión del precio -->
+                    <p>¿Imprimir el precio en el folleto?</p>
+                    <input type="radio" id="precioSi" name="impresionPrecio" value="si">
+                    <label for="precioSi">Sí</label>
+                    <input type="radio" id="precioNo" name="impresionPrecio" value="no">
+                    <label for="precioNo">No</label>
+                    <br><br>
+
+                    <button type="submit">Solicitar</button>
+                </fieldset>
+            </form>
+        </section>
+
+     </main>
+
+     <footer>
+    <p>&copy; 2025 INMOLINK Proyecto DAW Ingeniería Multimedia | 
+    <a href="accesibilidad.html">Accesibilidad</a></p>
+    </footer>
+</body>
+</html>

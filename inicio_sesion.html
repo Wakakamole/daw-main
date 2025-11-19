@@ -1,0 +1,89 @@
+<!-- PÁGINA DE INICIO DE SESIÓN -->
+<!--
+    Página que permite a los usuarios registrados iniciar sesion.
+    El formulario de inicio de sesión incluye los siguientes campos:
+    - Nombre de usuario
+    - Contraseña
+
+    También incluye:
+    - Enlace para registrarse si aún no tiene cuenta.
+
+    -> Se entregó en la segunda entrega del proyecto.
+        sin embargo, se ha pedido en la tercera entrega del proyecto.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Daniel Fernández Estevez, Sandra Moya del Amo">
+  <meta name="description" content="Página principal para usuarios registrados en INMOLINK">
+
+  <!-- Estilos principales -->
+  <link rel="stylesheet" href="css/inmolink.css">
+  <link rel="stylesheet" href="css/mediaQuery.css">
+  <link rel="stylesheet" href="css/iconos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Estilos alternativos -->
+  <link rel="alternate stylesheet" type="text/css" href="css/noche.css" title="modoNoche">
+  <link rel="alternate stylesheet" type="text/css" href="css/alto_contraste.css" title="altoContraste">
+  <link rel="alternate stylesheet" type="text/css" href="css/texto_grande.css" title="textoGrande">
+  <link rel="alternate stylesheet" type="text/css" href="css/texto_grande_dislexia.css" title="textoGrandeDislexia">
+  <link rel="alternate stylesheet" type="text/css" href="css/alto_contraste_grande.css" title="altoContraste+textoGrande">
+  
+  <!-- Estilo para impresión -->
+  <link rel="stylesheet" type="text/css" href="css/imprimir.css" media="print">
+
+  <title> INMOLINK - Inicio de Sesión </title>
+</head>
+<header>
+  <a href="index.html">
+     <img src="img/logo.png" alt="Logo INMOLINK" width="100" height="100" class="logo-normal">
+     <img src="img/!logo.png" alt="Logo INMOLINK blanco" width="100" height="100" class="logo-contraste">
+  </a>
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i> Inicio</a></li>
+            <li><a href="formulario_busqueda.html"><i class="fa-solid fa-magnifying-glass"></i> Buscar Propiedades</a></li>
+            <li><a href="inicio_sesion.html"><i class="fa-solid fa-user"></i> Inicio de Sesión</a></li>
+            <li><a href="registro_usuario.html"><i class="fa-solid fa-user-plus"></i> Registro de Usuario</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+  <section>
+  <h1>INICIAR SESIÓN</h1>
+  </section>
+
+  <form id="loginForm" action="index_user.html" method="post" novalidate>
+    <fieldset>
+      <legend>Datos de acceso</legend>
+
+      <label for="usuario">Usuario:</label>
+      <input type="text" id="usuario" name="usuario" placeholder="Tu usuario">
+      <br><br>
+
+  <label for="contrasena">Contraseña:</label>
+  <input type="password" id="contrasena" name="contrasena" placeholder="••••••">
+      <br><br>
+
+      <button type="submit">Iniciar Sesión</button>
+    </fieldset>
+  </form>
+
+  <script src="js/validaccion.js"></script>
+
+  <p class="registro-link"><strong>¿No tienes una cuenta?</strong>
+    <a href="registro_usuario.html" class="boton-enlace">Regístrate aquí</a>
+  </p>
+</main>
+
+<footer>
+    <p>&copy; 2025 INMOLINK Proyecto DAW Ingeniería Multimedia | 
+    <a href="accesibilidad.html">Accesibilidad</a></p>
+</footer>
+</body>
+</html>

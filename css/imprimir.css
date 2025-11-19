@@ -1,0 +1,84 @@
+@media print {
+
+    body {
+        font-size: 12pt;
+        font-family: 'Times New Roman', Times, serif;
+        color: #000;
+        background-color: #fff;
+        margin: 0;
+    }
+
+    header,
+    footer,
+    nav,
+    aside,
+    form:not(.formulario-importante),
+    .no-imprimir,
+    .imagen-decorativa,
+    #barra-navegacion,
+    #botones-accion {
+        display: none !important;
+    }
+
+    img:not(.no-imprimir) {
+        max-width: 50% !important;
+        height: auto;
+        display: block;
+        margin: 0.5em auto;
+    }
+
+    /* Limpia los flotados para el siguiente contenido */
+    .clear-float {
+        clear: both;
+    }
+
+
+    a {
+        text-decoration: underline;
+        color: #000;
+        font-weight: bold;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+    }
+
+    a[href^="#"]:after {
+        content: "";
+    }
+
+
+    h2, h3, h4 {
+        page-break-after: avoid;
+    }
+
+    p {
+        orphans: 3;
+        widows: 3;
+    }
+
+    .nueva-seccion {
+        page-break-before: always;
+    }
+
+    @page {
+        margin: 2cm;
+    }
+
+
+    #info-impresion:before {
+        content: "URL de la página: " attr(data-url);
+        display: block;
+        margin-top: 1.5em;
+        font-size: 9pt;
+    }
+
+    #info-impresion:after {
+        content: "© Copyright [Tu Nombre o Empresa] - Todos los derechos reservados. Impreso el " counter(page) " de " counter(pages);
+        display: block;
+        font-size: 9pt;
+        text-align: center;
+        margin-top: 0.5em;
+    }
+}

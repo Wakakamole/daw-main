@@ -1,0 +1,28 @@
+/* Archivo de estilo alternativo "Alto Contraste".
+  Este fichero está pensado para usarse como 'alternate stylesheet' (Ver -> Estilo de página
+  en navegadores como Firefox). Para que el selector de estilo de página funcione SIN JS,
+  las variables se declaran en :root directamente (no dependen de atributos HTML).
+*/
+:root {
+
+  --color-primario: #fead0a;       /* azul muy oscuro (acento/bordes) */
+  --color-secundario: #004080;     /* azul oscuro (fondos de botones/nav) */
+  --color-acento: #ffea00;         /* amarillo para highlights/iconos/textos */
+  --color-texto: #000000;          /* negro para texto */
+  --color-fondo: #e6d257;          /* fondo blanco */
+  --color-footer-bg: #002b5c;      /* cabecera / footer azul muy oscuro */
+  --color-footer-texto: #ffe62d;   /* texto en footer blanco */
+
+  /* Mensajes y tablas */
+  --color-mensaje-fondo: #f2f2f2;
+  --color-mensaje-texto: #000000;
+  --color-mensaje-borde: #000000;
+}
+
+
+header a .logo-normal {
+    display: none !important;
+}
+header a .logo-contraste {
+    display: inline !important;
+}

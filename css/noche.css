@@ -1,0 +1,20 @@
+/* Invierte los colores de toda la página */
+html {
+    filter: invert(1) hue-rotate(180deg);
+    background-color: #111;
+}
+
+/* Como se han invertido los colores de toda la pagina, vuelvo a invertir
+    las imagenes, iconos y videos para que esto si que se vea con el color original */
+img, video, iframe, svg {
+    filter: invert(1) hue-rotate(180deg);
+}
+  
+
+
+header a .logo-normal {
+    display: none !important;
+}
+header a .logo-contraste {
+    display: inline !important;
+}

@@ -1,0 +1,239 @@
+/* Archivo de estilos para header y footer */
+
+/*HEADER (ENCABEZADO) - GRID LAYOUT */
+header {
+  background-color: var(--color-secundario);
+  color: #fff;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+    "logo nav"
+    "search search";
+  align-items: center;
+  padding: 1rem 2rem 0;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  overflow: visible;
+}
+
+header > a { /* logo se coloca en el área de logo*/
+  grid-area: logo;
+}
+
+header > nav { /* nav se coloca en el área de nav*/
+  grid-area: nav;
+  justify-self: center;
+}
+
+header > search { /* search se coloca en el área de search*/
+  grid-area: search;
+  margin: 1rem -2rem 0;
+  background-color: rgba(255,255,255,0.1);
+  border-top: 2px solid rgba(255,255,255,0.3);
+  width: calc(100% + 4rem);
+}
+
+/* LOGO - Solo imagen */
+header a img { /* Logo imagen */
+  height: 100px;
+  width: auto;
+  transition: var(--transicion); /* Transición suave (hoover) */
+  margin-left: 1.5rem; 
+  margin-right: 2rem;
+}
+
+header a img:hover { /* Efecto hover en logo (se agranda)*/
+  transform: scale(1.05);
+}
+
+
+/*NAVEGACIÓN PRINCIPAL*/
+nav ul { /*seleciona la lista dentro de nav*/
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo de los enlaces del menú */
+nav a { /*selecciona los enlaces dentro de nav*/
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  transition: var(--transicion);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+/* Hover en los enlaces */
+nav a:hover {
+  color: var(--color-primario);
+  background-color: rgba(255,255,255,0.1);
+}
+
+nav details ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.5rem 0.3rem;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  background: #fff;
+  color: var(--color-texto);
+  min-width: 150px;
+  border-radius: 10px;
+  z-index: 2000;
+  margin-top: 0.3rem;
+  border: 1px solid #e0e0e0;
+  display: none;
+  opacity: 0;
+}
+
+nav details[open] ul {
+  display: flex;
+  opacity: 1;
+}
+
+nav details ul li {
+  width: 100%;
+}
+
+nav details ul a {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  color: var(--color-texto);
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+}
+
+nav details ul a:hover {
+  background: var(--color-secundario);
+  color: #fff;
+}
+
+nav details {
+  position: relative;
+}
+
+
+
+
+
+
+/*BÚSQUEDA RÁPIDA*/
+search { /*selecciona el elemento search*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem; 
+}
+
+search h2 { /* Título de la búsqueda */
+  margin: 0;
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap; 
+}
+
+search form {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin: 0;
+  background-color: rgba(255,255,255,0.1);
+  padding: 0.5rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+search label {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+search input {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 20px;
+  min-width: 250px;
+  font-size: 0.9rem;
+  background-color: #fff;
+  color: var(--color-texto);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: var(--transicion);
+}
+
+search input:focus {
+  outline: 2px solid rgba(255,255,255,0.8);
+  outline-offset: 2px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+
+search input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+search button { /* Botón de búsqueda */
+  background-color: var(--color-primario);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transicion);
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  white-space: nowrap;
+}
+
+search button:hover {
+  background-color: #b85b14; 
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+search button:active { /* Efecto al hacer clic */
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+
+/*FOOTER*/
+footer {
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-texto);
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: var(--color-footer-texto);
+  transition: var(--transicion);
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: var(--color-primario);
+}

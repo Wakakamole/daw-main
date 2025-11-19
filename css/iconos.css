@@ -1,0 +1,25 @@
+
+/*ICONOS FONT AWESOME*/
+
+/* Espaciado general para iconos */
+.fa-solid {
+    margin-right: 0.5rem;
+    width: 1.2em;
+    text-align: center;
+}
+
+/* Iconos en navegación */
+nav a .fa-solid {
+    color: #fff;
+    margin-right: 0.5rem;
+}
+
+/* Iconos en búsqueda */
+search h2 .fa-solid {
+    color: #fff;
+    margin-right: 0.5rem;
+}
+
+search button .fa-solid {
+    margin-right: 0.3rem;
+}

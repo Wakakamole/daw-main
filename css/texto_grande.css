@@ -1,0 +1,69 @@
+/*
+	Hoja de estilo alternativa: Texto grande
+*/
+
+
+
+/* Aumenta el tamaño base para que todas las unidades rem escalen */
+html { font-size: 150% !important; }
+
+
+
+
+p, li, dd { margin-bottom: 0.8em; }
+
+/* Subrayado claro en enlaces*/
+a {
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+	text-decoration-thickness: 2px;
+}
+
+/*Foco visible*/
+:where(a, button, input, select, textarea, summary, [tabindex])
+:focus-visible {
+	outline: 3px solid var(--color-secundario);
+	outline-offset: 3px;
+}
+
+/*tamaño mínimo para elementos interactivos*/
+:where(a, button,
+	input[type="button"], input[type="submit"], input[type="reset"],
+	.boton-enlace) {
+	min-height: 44px;
+	min-width: 44px;
+}
+
+/* Navegación y acciones mayores */
+nav a { font-size: 1.1em; }
+.boton-enlace { font-size: 1.1em; padding: 0.9em 1.6em; }
+
+/* Formularios, agranda etiquetas y campos, mejora separación */
+fieldset legend { font-size: 1.3rem; }
+fieldset label { font-size: 1.125rem; margin-top: 0.4rem; }
+fieldset input,
+fieldset select,
+fieldset textarea {
+	font-size: 1.125rem;
+	line-height: 1.6;
+	padding: 0.9rem 1.1rem;
+}
+
+/* Botones de formularios */
+fieldset button { font-size: 1.125rem; padding: 1rem; }
+
+/* Títulos y contenidos en tarjetas*/
+article h3 { font-size: 1.4rem; }
+article footer p { font-size: 1rem; }
+
+/* Búsqueda rápida*/
+search h2 { font-size: 1.2rem; }
+search input { font-size: 1.05rem; }
+search button { font-size: 1.05rem; padding: 0.9rem 1.6rem; }
+
+/* Listas de resultados y secciones  */
+main { padding: 2.2rem; }
+main > ul { gap: 2.2rem; }
+
+
+#descripcion p { max-width: 80ch; } /* límite de ancho maximo para parrafos*/

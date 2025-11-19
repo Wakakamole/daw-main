@@ -1,0 +1,136 @@
+/* Archivo de estilos principales */
+
+/*MAIN CONTENT (CUERPO PRINCIPAL)*/
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+main h1,
+main section h1 {
+  color: #0a4592;
+  font-size: 2.5em;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 2px solid #2a7ae2;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+}
+
+/* Estilo general para todos los h2 */
+h2 {
+  color: var(--color-secundario);
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilo específico para los h2 dentro de main section */
+main section h2 {
+  font-size: 2rem; /* Ajuste específico si es necesario */
+}
+
+/* Lista de artículos*/
+main > ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* para las ofertas de pisos */
+article {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: var(--transicion);
+  border: 1px solid #eee;
+}
+
+article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Título del anuncio */
+article h3 {
+  background-color: var(--color-secundario);
+  color: #fff;
+  padding: 1rem;
+  margin: 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Imagen y enlace */
+article a {
+  display: block;
+  padding: 1rem;
+  text-align: center;
+}
+
+article img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: var(--transicion);
+}
+
+article img:hover {
+  transform: scale(1.05);
+}
+
+/* Pie del anuncio (detalles) */
+article footer {
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+}
+
+article footer p { /* Párrafos dentro del pie */
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-texto); /* Asegurar que el texto sea visible */
+}
+
+article footer p:first-child { /* Primer párrafo (ubicación) */
+  font-size: 1rem;
+  color: var(--color-secundario);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+article footer p strong { /* Texto en negrita dentro del pie */
+  color: var(--color-secundario);
+}
+
+/* Precio destacado */
+article footer p:last-child {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primario);
+  text-align: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid #eee;
+}
+
+/* Estilos para validación de formularios (inputs en error y mensajes) */
+.input-error {
+  outline: 2px solid #c62828; 
+  box-shadow: 0 0 0 3px rgba(198,40,40,0.06);
+}
+.error-msg {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #c62828;
+  margin-left: 0.5rem;
+}
+.radio-group .error-msg {
+  display: block;
+  margin-top: 0.5rem;
+}
+
