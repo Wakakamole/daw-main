@@ -59,38 +59,196 @@
         <h1>RESULTADOS DE BÚSQUEDA</h1>
         <h2>Estos son los resultados que coinciden con tu búsqueda.</h2>
         </section>
-        <ul>
+
+        <!--Lista de filtros-->
+        <section id="ordenacion">
+            <label for="select-orden">Ordenar por:</label>
+            <select id="select-orden">
+                <option value="">-- Selecciona un criterio --</option>
+        
+                <option value="titulo-asc">Título: A → Z</option>
+                <option value="titulo-desc">Título: Z → A</option>
+        
+                <option value="fecha-asc">Fecha: más antigua → más reciente</option>
+                <option value="fecha-desc">Fecha: más reciente → más antigua</option>
+        
+                <option value="ciudad-asc">Ciudad: A → Z</option>
+                <option value="ciudad-desc">Ciudad: Z → A</option>
+        
+                <option value="pais-asc">País: A → Z</option>
+                <option value="pais-desc">País: Z → A</option>
+        
+                <option value="precio-asc">Precio: más barato → más caro</option>
+                <option value="precio-desc">Precio: más caro → más barato</option>
+            </select>
+        </section>
+        
+        
+        <!--Ejemplos de anuncios-->
+        <ul id="lista-anuncios">
+
             <li>
                 <article>
-                    <h3>Piso en Calle Francia Bilbao</h3>
+                    <h3>Ático moderno en Valencia</h3>
                     <a href="detalle_anuncio.html">
-                        <img src="img/noimage.png" alt="Foto 1" width="200">
+                        <img src="img/noimage.png" alt="Foto" width="200">
                     </a>
                     <footer>
-                        <p>Descripción de la foto 1</p>
-                        <p><strong>Fecha:</strong> 10/09/2025</p>
-                        <p><strong>Ciudad:</strong> Bilbao</p>
+                        <p>Ático luminoso cerca del puerto</p>
+                        <p><strong>Fecha:</strong> 12/03/2024</p>
+                        <p><strong>Ciudad:</strong> Valencia</p>
                         <p><strong>País:</strong> España</p>
-                        <p><strong>Precio:</strong> 320.000€</p>
+                        <p><strong>Precio:</strong> 450.000€</p>
                     </footer>
                 </article>
             </li>
+        
             <li>
                 <article>
-                    <h3>Piso en Calle Francia Bilbao</h3>
-                    <a href="aviso.html">
-                        <img src="img/noimage.png" alt="Foto 1" width="200">
+                    <h3>Piso céntrico en Madrid</h3>
+                    <a href="detalle_anuncio.html">
+                        <img src="img/noimage.png" alt="Foto" width="200">
                     </a>
                     <footer>
-                        <p>Descripción de la foto 2</p>
-                        <p><strong>Fecha:</strong> 10/09/2025</p>
-                        <p><strong>Ciudad:</strong> Bilbao</p>
+                        <p>Piso recién reformado en el centro</p>
+                        <p><strong>Fecha:</strong> 02/01/2023</p>
+                        <p><strong>Ciudad:</strong> Madrid</p>
                         <p><strong>País:</strong> España</p>
-                        <p><strong>Precio:</strong> 320.000€</p>
+                        <p><strong>Precio:</strong> 600.000€</p>
                     </footer>
                 </article>
             </li>
+        
+            <li>
+                <article>
+                    <h3>Casa rural en Braga</h3>
+                    <a href="detalle_anuncio.html">
+                        <img src="img/noimage.png" alt="Foto" width="200">
+                    </a>
+                    <footer>
+                        <p>Casa rústica con jardín amplio</p>
+                        <p><strong>Fecha:</strong> 15/07/2021</p>
+                        <p><strong>Ciudad:</strong> Braga</p>
+                        <p><strong>País:</strong> Portugal</p>
+                        <p><strong>Precio:</strong> 210.000€</p>
+                    </footer>
+                </article>
+            </li>
+        
+            <li>
+                <article>
+                    <h3>Loft moderno en París</h3>
+                    <a href="detalle_anuncio.html">
+                        <img src="img/noimage.png" alt="Foto" width="200">
+                    </a>
+                    <footer>
+                        <p>Loft cerca de Montmartre</p>
+                        <p><strong>Fecha:</strong> 22/11/2022</p>
+                        <p><strong>Ciudad:</strong> París</p>
+                        <p><strong>País:</strong> Francia</p>
+                        <p><strong>Precio:</strong> 850.000€</p>
+                    </footer>
+                </article>
+            </li>
+        
+            <li>
+                <article>
+                    <h3>Apartamento en Roma centro</h3>
+                    <a href="detalle_anuncio.html">
+                        <img src="img/noimage.png" alt="Foto" width="200">
+                    </a>
+                    <footer>
+                        <p>Con vistas al Coliseo</p>
+                        <p><strong>Fecha:</strong> 05/05/2020</p>
+                        <p><strong>Ciudad:</strong> Roma</p>
+                        <p><strong>País:</strong> Italia</p>
+                        <p><strong>Precio:</strong> 500.000€</p>
+                    </footer>
+                </article>
+            </li>
+        
+            <li>
+                <article>
+                    <h3>Chalet con piscina en Sevilla</h3>
+                    <a href="detalle_anuncio.html">
+                        <img src="img/noimage.png" alt="Foto" width="200">
+                    </a>
+                    <footer>
+                        <p>Zona tranquila y familiar</p>
+                        <p><strong>Fecha:</strong> 19/08/2024</p>
+                        <p><strong>Ciudad:</strong> Sevilla</p>
+                        <p><strong>País:</strong> España</p>
+                        <p><strong>Precio:</strong> 380.000€</p>
+                    </footer>
+                </article>
+            </li>
+        
+            <li>
+                <article>
+                    <h3>Duplex en Lisboa</h3>
+                    <a href="detalle_anuncio.html">
+                        <img src="img/noimage.png" alt="Foto" width="200">
+                    </a>
+                    <footer>
+                        <p>Con vistas al Tajo</p>
+                        <p><strong>Fecha:</strong> 11/02/2022</p>
+                        <p><strong>Ciudad:</strong> Lisboa</p>
+                        <p><strong>País:</strong> Portugal</p>
+                        <p><strong>Precio:</strong> 430.000€</p>
+                    </footer>
+                </article>
+            </li>
+        
+            <li>
+                <article>
+                    <h3>Apartamento en Berlín</h3>
+                    <a href="detalle_anuncio.html">
+                        <img src="img/noimage.png" alt="Foto" width="200">
+                    </a>
+                    <footer>
+                        <p>Apartamento minimalista</p>
+                        <p><strong>Fecha:</strong> 08/09/2023</p>
+                        <p><strong>Ciudad:</strong> Berlín</p>
+                        <p><strong>País:</strong> Alemania</p>
+                        <p><strong>Precio:</strong> 510.000€</p>
+                    </footer>
+                </article>
+            </li>
+        
+            <li>
+                <article>
+                    <h3>Villa en Atenas</h3>
+                    <a href="detalle_anuncio.html">
+                        <img src="img/noimage.png" alt="Foto" width="200">
+                    </a>
+                    <footer>
+                        <p>Villa con piscina y olivos</p>
+                        <p><strong>Fecha:</strong> 03/04/2021</p>
+                        <p><strong>Ciudad:</strong> Atenas</p>
+                        <p><strong>País:</strong> Grecia</p>
+                        <p><strong>Precio:</strong> 390.000€</p>
+                    </footer>
+                </article>
+            </li>
+        
+            <li>
+                <article>
+                    <h3>Piso económico en Zaragoza</h3>
+                    <a href="detalle_anuncio.html">
+                        <img src="img/noimage.png" alt="Foto" width="200">
+                    </a>
+                    <footer>
+                        <p>Ideal para estudiantes</p>
+                        <p><strong>Fecha:</strong> 28/06/2023</p>
+                        <p><strong>Ciudad:</strong> Zaragoza</p>
+                        <p><strong>País:</strong> España</p>
+                        <p><strong>Precio:</strong> 150.000€</p>
+                    </footer>
+                </article>
+            </li>
+        
         </ul>
+        
     </main>
 
     <footer>
@@ -98,5 +256,8 @@
     <a href="accesibilidad.html">Accesibilidad</a></p>
     </footer>
     
+    <script src="js/ordenacion.js"></script>
+    <script src="js/cambiar_estilo.js"></script>
+
 </body>
 </html>

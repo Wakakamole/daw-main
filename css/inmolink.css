@@ -956,3 +956,16 @@ label[for="dia_nacimiento"], label[for="mes_nacimiento"], label[for="anio_nacimi
 #dia_nacimiento { width: 60px; }
 #mes_nacimiento { min-width: 120px; }
 #anio_nacimiento { width: 80px; }
+
+
+#selector-estilos {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+#selector-estilos select {
+  padding: 4px;
+}

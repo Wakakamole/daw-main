@@ -60,6 +60,20 @@
                 <button type="submit">Intro</button>
             </form>
         </search>
+
+
+        <div id="selector-estilos">
+            <label for="estilo-select">Estilo:</label>
+            <select id="estilo-select">
+                <option value="">Por defecto</option>
+                <option value="modoNoche">Modo noche</option>
+                <option value="altoContraste">Alto contraste</option>
+                <option value="textoGrande">Texto grande</option>
+                <option value="textoGrandeDislexia">Texto grande dislexia</option>
+                <option value="altoContraste+textoGrande">Alto contraste + texto grande</option>
+            </select>
+        </div>
+        
     </header> 
 
 
@@ -151,10 +165,34 @@
     </ul>
 </main>
 
+<!-- Aviso de cookies -->
+<div id="aviso-cookies" style="
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: #222; color: #fff; padding: 15px; text-align: center; z-index: 1000;
+    display: none;
+">
+    Este sitio web utiliza cookies propias para mejorar la experiencia del usuario. 
+    <button id="aceptar-cookies">Aceptar</button>
+    <button id="rechazar-cookies">Rechazar</button>
+</div>
+
+<!-- Mensaje de confirmación -->
+<div id="mensaje-cookies" style="
+    position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%);
+    background: #4CAF50; color: #fff; padding: 10px 20px; border-radius: 5px;
+    display: none; z-index: 1001;
+">
+    Tus preferencias de cookies han sido guardadas.
+</div>
+
 <footer>
     <p>&copy; 2025 INMOLINK Proyecto DAW Ingeniería Multimedia | 
     <a href="accesibilidad.html">Accesibilidad</a></p>
+    <a href="politica_cookies.html">Política de cookies</a></p>
 </footer>
 
+
+<script src="js/cookies.js"></script>
+<script src="js/cambiar_estilo.js"></script>
 </body>
 </html>
