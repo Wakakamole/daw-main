@@ -98,9 +98,7 @@
   3-15 caracteres
   Solo letras (a-z, A-Z) y números (0-9)
   No comienza con num*/
-  // Se permite: letras (A-Z, a-z, Ñ, ñ) y números, y no puede comenzar por número.
-  // Longitud total: 3-15 caracteres.
-  var regexUsuario = /^[A-Za-zÑñ][A-Za-zÑñ0-9]{2,14}$/;
+  var regexUsuario = /^[A-Za-z\u00D1\u00F1][A-Za-z\u00D1\u00F10-9]{2,14}$/;
 
   /* validar contraseña
   6-15 caracteres
